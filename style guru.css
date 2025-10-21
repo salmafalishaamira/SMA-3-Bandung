@@ -1,0 +1,294 @@
+/* --- VARS & RESET --- */
+:root {
+    --primary-dark: #001f3f; /* Biru Dongker */
+    --secondary-blue: #0074D9; /* Biru Cerah */
+    --black-bg: #111111; /* Hitam Dominan */
+    --light-text: #ffffff; /* Putih */
+    --accent-yellow: #ffdc00; /* Kuning Aksen */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: var(--black-bg);
+    color: var(--light-text);
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.section-padding {
+    padding: 40px 0;
+}
+
+/* --- HEADER & NAVIGASI --- */
+header {
+    background: var(--black-bg);
+    padding: 1rem 0;
+    border-bottom: 3px solid var(--secondary-blue);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.school-logo {
+    height: 50px;
+    margin-right: 15px;
+}
+
+.logo h1 {
+    font-size: 1.8rem;
+    color: var(--light-text);
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+}
+
+.navbar ul li {
+    position: relative;
+    margin-left: 20px;
+}
+
+/* Link Navigasi Utama */
+.navbar a {
+    color: var(--light-text);
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+    transition: background-color 0.3s;
+    border-radius: 5px;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    background-color: var(--secondary-blue);
+}
+
+/* Dropdown Menu */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--primary-dark);
+    min-width: 180px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+    z-index: 1;
+    top: 100%;
+    border-radius: 0 0 5px 5px;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Link Sub-menu yang aktif */
+.dropdown-content a.active-sub {
+    background-color: var(--secondary-blue);
+}
+
+/* --- JUDUL HALAMAN UTAMA --- */
+.main-title {
+    color: var(--secondary-blue);
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.2rem;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--light-text);
+}
+
+/* --- FOOTER --- */
+footer {
+    background-color: var(--black-bg);
+    text-align: center;
+    padding: 20px 0;
+    border-top: 3px solid var(--secondary-blue);
+    margin-top: 30px;
+}
+
+/* --- VISI MISI PAGE (visi-misi.html) --- */
+.visi-card {
+    background-color: var(--primary-dark);
+    padding: 30px;
+    margin: 0 0 50px;
+    border-radius: 10px;
+    border: 3px solid var(--secondary-blue);
+    box-shadow: 0 0 15px rgba(0, 116, 217, 0.4);
+    text-align: center;
+}
+
+.icon-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.icon-header i {
+    font-size: 2rem;
+    color: var(--accent-yellow);
+    margin-right: 15px;
+}
+
+.visi-text {
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.visi-text strong {
+    color: var(--accent-yellow);
+}
+
+.explanation {
+    font-size: 0.9rem;
+    color: #aaa;
+    font-style: italic;
+}
+
+.misi-title-header {
+    font-size: 1.5rem;
+    color: var(--secondary-blue);
+    margin: 50px 0 30px;
+    border-bottom: 1px dashed var(--light-text);
+    padding-bottom: 10px;
+}
+
+.misi-items {
+    list-style: none;
+}
+
+.misi-item {
+    display: flex;
+    align-items: flex-start;
+    background-color: var(--black-bg);
+    border-left: 5px solid var(--secondary-blue);
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.misi-item i {
+    color: var(--accent-yellow);
+    margin-right: 15px;
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+.misi-item p {
+    color: var(--light-text);
+    margin: 0;
+}
+
+
+/* --- GURU & STAF PAGE (guru-staf.html) --- */
+.subtitle-page {
+    text-align: center;
+    font-style: italic;
+    margin-bottom: 40px;
+    color: #cccccc;
+}
+
+.guru-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.guru-card {
+    background-color: var(--primary-dark);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid var(--secondary-blue);
+}
+
+.guru-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 116, 217, 0.7);
+}
+
+.guru-foto {
+    width: 100%;
+    height: 200px;
+    background-size: cover;
+    background-position: top center;
+    border-bottom: 3px solid var(--secondary-blue);
+}
+
+.guru-info {
+    padding: 15px 20px;
+}
+
+.guru-info h4 {
+    color: var(--light-text);
+    font-size: 1.2rem;
+    border-bottom: 1px dashed var(--secondary-blue);
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+.guru-info p {
+    font-size: 0.95rem;
+    color: #cccccc;
+    margin: 5px 0;
+    display: flex;
+    align-items: center;
+}
+
+.guru-info p i {
+    color: var(--accent-yellow);
+    margin-right: 10px;
+}
+
+.guru-info .jabatan {
+    font-size: 0.85rem;
+    margin-top: 10px;
+    color: var(--secondary-blue);
+    font-style: italic;
+}
+
+
+/* --- RESPONSIVE --- */
+@media (max-width: 900px) {
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    .navbar ul {
+        margin-top: 15px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 650px) {
+    .guru-grid {
+        grid-template-columns: 1fr; 
+    }
+    .main-title {
+        font-size: 1.8rem;
+    }
+}

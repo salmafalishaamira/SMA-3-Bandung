@@ -1,0 +1,256 @@
+/* --- VARS & RESET --- */
+:root {
+    --primary-dark: #001f3f; /* Biru Dongker */
+    --secondary-blue: #0074D9; /* Biru Cerah */
+    --black-bg: #111111; /* Hitam Dominan */
+    --light-text: #ffffff; /* Putih */
+    --accent-yellow: #ffdc00; /* Kuning Aksen */
+    --success-green: #2ECC71; /* Hijau untuk Selesai */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: var(--black-bg);
+    color: var(--light-text);
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.section-padding {
+    padding: 40px 0;
+}
+
+/* --- HEADER & NAVIGASI --- */
+header {
+    background: var(--black-bg);
+    padding: 1rem 0;
+    border-bottom: 3px solid var(--secondary-blue);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.school-logo {
+    height: 50px;
+    margin-right: 15px;
+}
+
+.logo h1 {
+    font-size: 1.8rem;
+    color: var(--light-text);
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+}
+
+.navbar ul li {
+    position: relative;
+    margin-left: 20px;
+}
+
+/* Link Navigasi Utama */
+.navbar a {
+    color: var(--light-text);
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+    transition: background-color 0.3s;
+    border-radius: 5px;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    background-color: var(--secondary-blue);
+}
+
+/* Dropdown Menu Styling */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--primary-dark);
+    min-width: 180px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+    z-index: 1;
+    top: 100%;
+    border-radius: 0 0 5px 5px;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Link Sub-menu yang aktif */
+.dropdown-content a.active-sub {
+    background-color: var(--secondary-blue);
+}
+
+/* --- JUDUL HALAMAN UTAMA & FOOTER --- */
+.main-title {
+    color: var(--secondary-blue);
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.2rem;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--light-text);
+}
+
+footer {
+    background-color: var(--black-bg);
+    text-align: center;
+    padding: 20px 0;
+    border-top: 3px solid var(--secondary-blue);
+    margin-top: 30px;
+}
+
+/* --- VISI MISI & GURU STAF (Lanjutan) --- */
+/* (Kode Visi Misi dan Guru Staf diringkas, tapi tidak diulang di sini agar fokus ke BERITA) */
+.visi-card, .guru-card {
+    background-color: var(--primary-dark);
+    border: 1px solid var(--secondary-blue);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    /* ... styling lainnya ... */
+}
+
+/* --- BERITA PAGE (berita.html) --- */
+
+.berita-subtitle {
+    font-size: 1.8rem;
+    padding: 10px 0;
+    margin: 40px 0 20px;
+    border-bottom: 2px solid;
+    display: flex;
+    align-items: center;
+}
+
+.berita-subtitle i {
+    margin-right: 15px;
+    font-size: 1.5rem;
+}
+
+/* Warna Subtitle untuk Kegiatan Sudah Berlangsung */
+.berita-subtitle.sudah {
+    color: var(--success-green);
+    border-color: var(--success-green);
+}
+
+/* Warna Subtitle untuk Kegiatan Akan Datang */
+.berita-subtitle.akan {
+    color: var(--secondary-blue);
+    border-color: var(--secondary-blue);
+}
+
+.berita-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.berita-item-box {
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s;
+}
+
+.berita-item-box:hover {
+    transform: translateY(-5px);
+}
+
+/* Styling Khusus: Kegiatan Selesai */
+.berita-item-box.selesai {
+    background-color: var(--primary-dark);
+    border-left: 5px solid var(--success-green); /* Garis hijau */
+}
+
+/* Styling Khusus: Kegiatan Mendatang */
+.berita-item-box.mendatang {
+    background-color: var(--primary-dark);
+    border-left: 5px solid var(--secondary-blue); /* Garis biru */
+}
+
+
+.berita-item-box h4 {
+    font-size: 1.15rem;
+    color: var(--light-text);
+    margin-bottom: 10px;
+}
+
+.tanggal-berita {
+    font-size: 0.9rem;
+    color: #aaa;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.tanggal-berita i {
+    color: var(--accent-yellow);
+    margin-right: 8px;
+}
+
+.berita-item-box p {
+    color: #cccccc;
+    margin-bottom: 15px;
+}
+
+.read-more {
+    display: inline-block;
+    background-color: var(--secondary-blue);
+    color: var(--light-text);
+    padding: 8px 15px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    transition: background-color 0.3s;
+}
+
+.read-more:hover {
+    background-color: #0093ff;
+}
+
+/* --- RESPONSIVE (Lanjutan) --- */
+@media (max-width: 900px) {
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    .navbar ul {
+        margin-top: 15px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+}
+@media (max-width: 650px) {
+    .berita-container {
+        grid-template-columns: 1fr;
+    }
+    .main-title {
+        font-size: 1.8rem;
+    }
+}
